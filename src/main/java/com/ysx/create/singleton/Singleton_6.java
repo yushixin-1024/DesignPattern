@@ -1,12 +1,15 @@
-package create.singleton;
+package com.ysx.create.singleton;
 
 /**
- * <b>单例模式-静态内部类</b>
+ * <b>单例模式-双重检查锁</b>
  * <ol>
  *     <b>实现步骤:</b>
  *     <li>构造器私有化</li>
- *     <li>静态内部类,Singleton类加载的时候不会加载内部类,只有用到内部类时才回去加载内部类</li>
+ *     <li>volatile保证多线程下的可见性</li>
  *     <li>向外部暴露一个静态的公共方法</li>
+ *     <li>非空判断</li>
+ *     <li>同步代码块</li>
+ *     <li>再次非空判断(保证多线程下的单例)</li>
  * </ol>
  * <ol>
  *     <b>优点:</b>
@@ -19,7 +22,7 @@ package create.singleton;
  *     <li>推荐使用</li>
  * </ol>
  */
-public class Singleton_7 {
+public class Singleton_6 {
 
     public static void main(String[] args) {
         Singleton instance1 = Singleton.getInstance();
@@ -33,14 +36,22 @@ public class Singleton_7 {
         // 1.构造器私有化,其他类不能new
         private Singleton() {}
 
-        // 2.静态内部类,Singleton类加载的时候不会加载内部类,只有用到内部类时才回去加载内部类(保证懒加载)
-        private static class SingletonInstance {
-            private static final Singleton instance = new Singleton();
-        }
+        // 2.volatile保证多线程下的可见性
+        private static volatile Singleton instance;
 
-        // 3.向外部暴露一个静态的公共方法,此时会装载SingletonInstance,类装载时是线程安全的(保证线程安全)
+        // 3.向外部暴露一个静态的公共方法
         public static Singleton getInstance() {
-            return SingletonInstance.instance;
+            // 3.非空判断
+            if ( instance == null ) {
+                // 4.同步代码块
+                synchronized (Singleton.class) {
+                    // 5.再次非空判断(保证多线程下的单例)
+                    if ( instance == null ) {
+                        instance = new Singleton();
+                    }
+                }
+            }
+            return instance;
         }
     }
 }

@@ -1,4 +1,4 @@
-package create.singleton;
+package com.ysx.create.singleton;
 
 /**
  * <b>单例模式-枚举</b>

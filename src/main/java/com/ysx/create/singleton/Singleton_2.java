@@ -1,11 +1,11 @@
-package create.singleton;
+package com.ysx.create.singleton;
 
 /**
- * <b>单例模式-饿汉式(静态常量)</b>
+ * <b>单例模式-饿汉式(静态代码块)</b>
  * <ol>
  *     <b>实现步骤:</b>
  *     <li>构造器私有化</li>
- *     <li>类的内部创建对象</li>
+ *     <li>静态代码块实例化</li>
  *     <li>向外部暴露一个静态的公共方法</li>
  * </ol>
  * <ol>
@@ -22,7 +22,7 @@ package create.singleton;
  *     <li><b>可能</b>会造成内存的浪费,所以如果你确定一定会用到这个实例,可以使用这种方式</li>
  * </ol>
  */
-public class Singleton_1 {
+public class Singleton_2 {
 
     public static void main(String[] args) {
         Singleton instance1 = Singleton.getInstance();
@@ -36,8 +36,12 @@ public class Singleton_1 {
         // 1.构造器私有化,其他类不能new
         private Singleton() {}
 
-        // 2.类的内部创建对象
-        private final static Singleton instance = new Singleton();
+        private static final Singleton instance;
+
+        // 2.静态代码块实例化
+        static {
+            instance = new Singleton();
+        }
 
         // 3.向外部暴露一个静态的公共方法
         public static Singleton getInstance() {

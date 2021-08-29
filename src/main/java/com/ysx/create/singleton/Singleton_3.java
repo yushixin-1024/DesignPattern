@@ -1,4 +1,4 @@
-package create.singleton;
+package com.ysx.create.singleton;
 
 /**
  * <b>单例模式-懒汉式(线程不安全)</b>
