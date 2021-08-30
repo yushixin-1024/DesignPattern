@@ -49,33 +49,34 @@
 ### 四、设计模式(Design Pattern)  软件设计最佳实践  GOF
 ````
 创建型模式:
-    单例模式
-    简单工厂模式
-    抽象工厂模式
-    工厂模式
-    原型模式
-    建造者模式
+    单例模式 (ysx.create.singleton)
+    简单工厂模式 (ysx.create.simple_factory)
+    工厂方法模式 (ysx.create.factory_method)
+    抽象工厂模式 (ysx.create.abstract_factory)
+    原型模式 (ysx.create.)
+    建造者模式 (ysx.create.)
 结构型模式:
-    适配器模式
-    桥接模式
-    装饰模式
-    组合模式
-    外观模式
-    享元模式
-    代理模式
+    适配器模式 (ysx.structure.)
+    桥接模式 (ysx.structure.)
+    装饰模式 (ysx.structure.)
+    组合模式 (ysx.structure.)
+    外观模式 (ysx.structure.)
+    享元模式 (ysx.structure.)
+    代理模式 (ysx.structure.)
 行为型模式:
-    模板方法模式
-    命令模式
-    访问者模式
-    迭代器模式
-    观察者模式
-    中介者模式
-    备忘录模式
-    解释器(Interpreter)模式
-    状态模式
-    策略模式
-    职责链模式
+    模板方法模式 (ysx.behavior.)
+    命令模式 (ysx.behavior.)
+    访问者模式 (ysx.behavior.)
+    迭代器模式 (ysx.behavior.)
+    观察者模式 (ysx.behavior.)
+    中介者模式 (ysx.behavior.)
+    备忘录模式 (ysx.behavior.)
+    解释器(Interpreter)模式 (ysx.behavior.)
+    状态模式 (ysx.behavior.)
+    策略模式 (ysx.behavior.)
+    职责链模式 (ysx.behavior.)
 ````
+
 ````
 每种设计模式都有对应的UML类图,需要在IDEA中安装PlantUML integration插件
 ````

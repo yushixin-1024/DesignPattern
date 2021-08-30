@@ -1,0 +1,65 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+'泛化(继承)
+Pizza <|-- ShanghaiAPizza
+Pizza <|-- ShanghaiBPizza
+Pizza <|-- BeijingAPizza
+Pizza <|-- BeijingBPizza
+
+'泛化(继承)
+OrderPizza <|-- ShanghaiOrderPizza
+OrderPizza <|-- BeijingOrderPizza
+
+'依赖
+ShanghaiOrderPizza ..> ShanghaiAPizza
+ShanghaiOrderPizza ..> ShanghaiBPizza
+
+'依赖
+BeijingOrderPizza ..> BeijingAPizza
+BeijingOrderPizza ..> BeijingBPizza
+
+'上海披萨订单
+class ShanghaiOrderPizza {
+    Pizza createPizza(String name)
+}
+
+'北京披萨订单
+class BeijingOrderPizza {
+    Pizza createPizza(String name)
+}
+
+'披萨订单
+abstract class OrderPizza {
+    +{abstract} Pizza createPizza(String name)
+    +OrderPizza()
+}
+
+'上海A披萨
+class ShanghaiAPizza {
+    +prepare()
+}
+
+'上海B披萨
+class ShanghaiBPizza {
+    +prepare()
+}
+
+'北京A披萨
+class BeijingAPizza {
+    +prepare()
+}
+
+'北京B披萨
+class BeijingBPizza {
+    +prepare()
+}
+
+'披萨抽象类
+abstract class Pizza {
+    +{abstract} prepare()
+    +bake()
+    +cut()
+    +box()
+}
+@enduml

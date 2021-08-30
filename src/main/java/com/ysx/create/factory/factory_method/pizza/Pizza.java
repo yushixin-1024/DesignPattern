@@ -1,4 +1,4 @@
-package com.ysx.create.simple_factory.pizza;
+package com.ysx.create.factory.factory_method.pizza;
 
 /**
  * <b>披萨抽象类-模拟披萨的制作流程</b>

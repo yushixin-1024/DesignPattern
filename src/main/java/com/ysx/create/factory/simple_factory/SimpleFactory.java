@@ -1,9 +1,9 @@
-package com.ysx.create.simple_factory.order;
+package com.ysx.create.factory.simple_factory;
 
-import com.ysx.create.simple_factory.pizza.APizza;
-import com.ysx.create.simple_factory.pizza.BPizza;
-import com.ysx.create.simple_factory.pizza.CPizza;
-import com.ysx.create.simple_factory.pizza.Pizza;
+import com.ysx.create.factory.simple_factory.pizza.APizza;
+import com.ysx.create.factory.simple_factory.pizza.BPizza;
+import com.ysx.create.factory.simple_factory.pizza.CPizza;
+import com.ysx.create.factory.simple_factory.pizza.Pizza;
 
 /**
  * 订购披萨-简单(静态)工厂类

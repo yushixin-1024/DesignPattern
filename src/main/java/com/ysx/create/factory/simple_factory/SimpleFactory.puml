@@ -1,0 +1,49 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Pizza <|-- APizza
+Pizza <|-- BPizza
+Pizza <|-- CPizza
+
+'依赖
+OrderPizza ..> SimpleFactory
+
+'依赖
+SimpleFactory ..>  APizza
+SimpleFactory ..>  BPizza
+SimpleFactory ..>  CPizza
+
+'披萨订单
+class OrderPizza {
+    +make()
+    -String getName()
+}
+
+'简单(静态)工厂类
+class SimpleFactory {
+    +{static} Pizza createPizza(String name)
+}
+
+'A披萨
+class APizza {
+    +prepare()
+}
+
+'B披萨
+class BPizza {
+    +prepare()
+}
+
+'C披萨
+class CPizza {
+    +prepare()
+}
+
+'披萨抽象类
+abstract class Pizza {
+    +{abstract} prepare()
+    +bake()
+    +cut()
+    +box()
+}
+@enduml

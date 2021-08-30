@@ -1,7 +1,7 @@
-package com.ysx.create.simple_factory.order;
+package com.ysx.create.factory.simple_factory;
 
 /**
- * 披萨商店,下订单
+ * 客户端:披萨商店,下订单
  */
 public class PizzaStore {
 

@@ -1,4 +1,4 @@
-package com.ysx.create.simple_factory.pizza;
+package com.ysx.create.factory.simple_factory.pizza;
 
 /**
  * B披萨
