@@ -53,7 +53,7 @@
     简单工厂模式 (ysx.create.simple_factory)
     工厂方法模式 (ysx.create.factory_method)
     抽象工厂模式 (ysx.create.abstract_factory)
-    原型模式 (ysx.create.)
+    原型模式 (ysx.create.prototype)
     建造者模式 (ysx.create.)
 结构型模式:
     适配器模式 (ysx.structure.)

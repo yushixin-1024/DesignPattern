@@ -19,6 +19,9 @@ ShanghaiFactory ..> ShanghaiBPizza
 BeijingFactory ..> BeijingAPizza
 BeijingFactory ..> BeijingBPizza
 
+'依赖
+OrderPizza ..> AbstractFactory
+
 '披萨订单
 class OrderPizza {
     +OrderPizza()
