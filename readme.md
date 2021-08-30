@@ -76,3 +76,8 @@
     策略模式
     职责链模式
 ````
+````
+每种设计模式都有对应的UML类图,需要在IDEA中安装PlantUML integration插件
+````
+![image](https://user-images.githubusercontent.com/25497555/131294665-629e3923-90f1-4a55-aa09-45992571316d.png)
+![image](https://user-images.githubusercontent.com/25497555/131294969-92fe557d-02f0-4dcf-9d0d-e07ad00a3517.png)
