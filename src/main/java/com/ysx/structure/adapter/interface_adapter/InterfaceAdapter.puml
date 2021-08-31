@@ -1,0 +1,31 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+'实现
+AbstractVoltage ..|> IVoltage
+
+'依赖
+Client ..> Phone
+Client ..> AbstractVoltage
+Phone ..> AbstractVoltage
+
+'客户端
+class Client {}
+
+'手机
+class Phone {
+    +void charging(AbstractVoltage:voltage)
+}
+
+'默认抽象实现
+abstract class AbstractVoltage {
+    +int output5V()
+    +int output220V()
+}
+
+'电压接口
+interface IVoltage {
+    +int output5V()
+    +int output220V()
+}
+@enduml
