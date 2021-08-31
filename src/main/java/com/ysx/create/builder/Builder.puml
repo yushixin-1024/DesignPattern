@@ -1,0 +1,54 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+'泛化(继承)
+BuilderConcrete1 --|> Builder
+BuilderConcrete2 --|> Builder
+
+'聚合
+Direct o-- Builder
+
+'组合
+Builder *-- Product
+
+'依赖
+Client ..> Direct
+Client ..> BuilderConcrete1
+Client ..> BuilderConcrete2
+
+'指挥者
+class Direct {
+    #Builder:builder
+    +Direct(Builder:builder)
+    +void build()
+}
+
+'客户端
+class Client {
+    +{static} void main(String[] args)
+}
+
+'产品
+class Product {}
+
+'具体建造者1
+class BuilderConcrete1 {
+    +void buildPartA()
+    +void buildPartB()
+    +void buildPartC()
+}
+
+'具体建造者2
+class BuilderConcrete2 {
+    +void buildPartA()
+    +void buildPartB()
+    +void buildPartC()
+}
+
+'抽象建造者
+abstract class Builder {
+    +{abstract} void buildPartA()
+    +{abstract} void buildPartB()
+    +{abstract} void buildPartC()
+}
+@enduml
