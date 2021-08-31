@@ -1,27 +1,31 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-abstract class AbstractList
-abstract AbstractCollection
-interface List
-interface Collection
+'克隆对象
+PrototypeObject "n" --|> "1" Prototype
 
-List <|-- AbstractList
-Collection <|-- AbstractCollection
+'实现
+Prototype ..|> Serializable
+Prototype ..|> Cloneable
 
-Collection <|- List
-AbstractCollection <|- AbstractList
-AbstractList <|-- ArrayList
-
-class ArrayList {
-Object[] elementData
-size()
+'生成类
+class PrototypeObject {
+    #Object clone() throws CloneNotSupportedException
+    +Object serialize()
 }
 
-enum TimeUnit {
-DAYS
-HOURS
-MINUTES
+'原型类
+class Prototype {
+    #Object clone() throws CloneNotSupportedException
+    +Object serialize()
+}
+
+'序列化接口
+interface Serializable {
+}
+
+'clone接口
+interface Cloneable {
 }
 
 @enduml
