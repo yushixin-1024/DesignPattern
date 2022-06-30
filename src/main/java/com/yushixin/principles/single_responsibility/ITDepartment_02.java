@@ -8,37 +8,27 @@ package com.yushixin.principles.single_responsibility;
  * 运维: Operator
  */
 public class ITDepartment_02 {
-    /**
-     * 员工类:开发
-     */
-    static class Developer {
-
-        public static void work(String name) {
-            System.out.println(name + "正在写代码...");
-        }
-    }
-    /**
-     * 员工类:测试
-     */
-    static class Tester {
-
-        public static void work(String name) {
-            System.out.println(name + "正在写用例...");
-        }
-    }
-    /**
-     * 员工类:运维
-     */
-    static class Operator {
-
-        public static void work(String name) {
-            System.out.println(name + "正在写脚本...");
-        }
-    }
-
     public static void main(String[] args) {
         Developer.work("Developer");
         Tester.work("Tester");
         Operator.work("Operator");
+    }
+    // 员工类:开发
+    static class Developer {
+        public static void work(String name) {
+            System.out.println(name + "正在写代码...");
+        }
+    }
+    // 员工类:测试
+    static class Tester {
+        public static void work(String name) {
+            System.out.println(name + "正在写用例...");
+        }
+    }
+    // 员工类:运维
+    static class Operator {
+        public static void work(String name) {
+            System.out.println(name + "正在写脚本...");
+        }
     }
 }

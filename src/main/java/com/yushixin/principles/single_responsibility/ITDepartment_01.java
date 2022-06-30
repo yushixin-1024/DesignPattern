@@ -8,18 +8,15 @@ package com.yushixin.principles.single_responsibility;
  * 运维: Operator
  */
 public class ITDepartment_01 {
-    /**
-     * 员工类
-     */
-    static class Employee {
-
-        public static void work(String name) {
-            System.out.println(name + "正在写代码...");
-        }
-    }
     public static void main(String[] args) {
         Employee.work("Developer");
         Employee.work("Tester");
         Employee.work("Operator");
+    }
+    // 员工类
+    static class Employee {
+        public static void work(String name) {
+            System.out.println(name + "正在写代码...");
+        }
     }
 }
