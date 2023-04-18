@@ -4,7 +4,7 @@ import java.io.File;
 import java.util.List;
 import java.util.Map;
 
-public class ExcelReaderUtil {
+public class ExcelReadUtil {
     
     // Excel2003扩展名
     public static final String EXCEL03_EXTENSION = ".xls";
